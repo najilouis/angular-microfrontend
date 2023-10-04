@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from 'src/app/models/user';
+// import { User } from 'src/app/models/user';
+import { User } from '@@models';
 import { UsersService } from 'src/app/shared/users/users.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UsersService } from 'src/app/shared/users/users.service';
   styleUrls: ['./add-user.component.scss'],
 })
 export class AddUserComponent {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) { }
   addUser(form: NgForm) {
     const user: User = form.value;
     this.usersService.addUser(user);

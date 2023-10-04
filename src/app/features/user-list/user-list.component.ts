@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from 'src/app/models/user';
+// import { User } from 'src/app/models/user';
+import { User } from '@@models';
 import { UsersService } from 'src/app/shared/users/users.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class UserListComponent {
 
   displayedColumns = ['username', 'actions'];
 
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) { }
 
   deleteUser(user: User) {
     this.usersService.deleteUser(user);

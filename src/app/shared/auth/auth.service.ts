@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { User } from 'src/app/models/user';
+// import { User } from 'src/app/models/user';
+import { User } from '@@models';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +23,7 @@ export class AuthService {
       if (user) {
         this._user.next(user);
       }
-    } catch {}
+    } catch { }
   }
 
   public login(user: User) {
