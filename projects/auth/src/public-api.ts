@@ -3,5 +3,5 @@
  */
 
 export * from './lib/auth.service';
-export * from './lib/auth.component';
-export * from './lib/auth.module';
+export * from './lib/is-logged.guard';
+export * from './lib/is-not-logged.guard';

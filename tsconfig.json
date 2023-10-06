@@ -13,7 +13,7 @@
       "@@models": [
         "dist/models"
       ],
-      "auth": [
+      "@@auth": [
         "dist/auth"
       ]
     },

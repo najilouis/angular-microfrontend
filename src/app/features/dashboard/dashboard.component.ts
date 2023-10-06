@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth/auth.service';
+// import { AuthService } from 'src/app/shared/auth/auth.service';
+import { AuthService } from '@@auth';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/shared/auth/auth.service';
 export class DashboardComponent {
   public isSidenavOpen = false;
 
-  constructor(private readonly authService: AuthService, private readonly router: Router) {}
+  constructor(private readonly authService: AuthService, private readonly router: Router) { }
 
   logout() {
     this.authService.logout();
