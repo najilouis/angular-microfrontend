@@ -15,9 +15,6 @@ export class DashboardComponent {
 
   logout() {
     this.authService.logout();
-    this.router.navigateByUrl('/', {
-      onSameUrlNavigation: 'reload',
-      skipLocationChange: true,
-    });
+    this.router.navigateByUrl('/');
   }
 }

@@ -23,7 +23,7 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/.htaccess"],
             "styles": ["src/styles.scss"],
             "scripts": []
           },
@@ -41,7 +41,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/app-micro/"
             },
             "development": {
               "buildOptimizer": false,
@@ -49,7 +50,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "baseHref": "/app-micro/"
             }
           },
           "defaultConfiguration": "production"
@@ -223,6 +225,36 @@
             "assets": ["projects/login/src/favicon.ico", "projects/login/src/assets"],
             "styles": ["projects/login/src/styles.scss"],
             "scripts": []
+          }
+        }
+      }
+    },
+    "login-lib": {
+      "projectType": "library",
+      "root": "projects/login",
+      "sourceRoot": "projects/login/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/login/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/login/tsconfig.app.json"
+            },
+            "development": {
+              "tsConfig": "projects/auth/tsconfig.app.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/auth/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }
